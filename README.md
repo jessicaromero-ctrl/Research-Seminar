@@ -4,12 +4,12 @@
 
 ### Un procedimiento sobre logs de eventos clínicos con machine learning y minería de procesos
 
-**Universidad Politécnica Metropolitana · México** *(nombre oficial, logotipo y código del programa por confirmar)*
+**Universidad Politécnica Metropolitana del Estado de Hidalgo**
 
-**Maestría en Ingeniería en Inteligencia Artificial**
+**Maestría en Inteligencia Artificial**
 
 **Autora:** Jessica Melani Romero Lora
-**Director de tesis:** Dr. Marcos Yamir Gómez *(confirmar autorización para publicar su nombre)*
+**Director de tesis:** Dr. Marcos Yamir Gómez
 
 **Versión:** 0.5 · **Estado:** en construcción · **Fecha:** octubre de 2026
 
