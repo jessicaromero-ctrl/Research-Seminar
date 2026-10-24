@@ -194,7 +194,7 @@ Dependencias previstas: Python 3, PM4Py, scikit-learn, XGBoost, pandas, numpy. L
 
 ## 📬 Contacto
 
-Jessica Melani Romero Lora · *(correo institucional por confirmar)*
+Jessica Melani Romero Lora · *25322116@upmh.edu.mx*
 
 ---
 
