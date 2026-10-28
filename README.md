@@ -27,16 +27,24 @@ El procedimiento propuesto integra tres componentes: (1) la **minería de proces
 
 **Palabras clave:** fuga de información, variables circulares, minería de procesos, sepsis, unidad de cuidados intensivos, validación cruzada anidada.
 
-**Documentos del repositorio:**
+### Estructura del repositorio
 
-| Archivo | Contenido |
+| Archivo o carpeta | Contenido |
 |---|---|
-| [`Protocolo V5.pdf`](Protocolo%20V5.pdf) | Protocolo breve de investigación (versión 5) |
-| [`Estado_del_Arte_v3.xlsx`](Estado_del_Arte_v3.xlsx) | Matriz del estado del arte: referentes, marco teórico y relación con los objetivos |
-| [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx) | Versión de la matriz con enlaces adicionales a las fuentes |
+| [`README.md`](README.md) | Este documento: descripción académica de la investigación y de la estructura del repositorio |
 | [`LICENSE`](LICENSE) | Archivo de licencia del repositorio |
+| [`Protocolo V5.pdf`](Protocolo%20V5.pdf) | Protocolo breve de investigación (versión 5) |
+| [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx) | Matriz del estado del arte (hojas: Resumen, Estado del arte, Marco teórico y Objetivos), con enlaces a las fuentes |
+| [`datos/sepsis/`](datos/sepsis/) | Log de eventos *Sepsis Cases* (Mannhardt, 2016); ver [`datos/sepsis/README.md`](datos/sepsis/README.md) |
+| [`datos/sepsis/original/`](datos/sepsis/original/) | **Log oficial completo** de 4TU.ResearchData (`.xes.gz`), su versión descomprimida (`.xes`) y un CSV plano con una fila por evento. 1,050 casos, 15,214 eventos, 16 actividades y 27 atributos propios (`Age`, `Diagnose`, `Leucocytes`, `CRP`, `LacticAcid` y 22 indicadores booleanos) más 4 atributos estándar de XES. 110 casos tienen `Admission IC`. **Es la versión que debe usarse en la Fase 4.** |
+| [`datos/sepsis/benchmark_simplificado/`](datos/sepsis/benchmark_simplificado/) | Versión simplificada del mismo log (solo caso, actividad y marca de tiempo; 1,050 casos y 15,214 eventos), sin atributos clínicos. Sirve solo como referencia para minería de procesos; **no es apta para la Fase 4.** |
+| [`scripts/`](scripts/) | [`convertir_xes_a_csv.py`](scripts/convertir_xes_a_csv.py): convierte el log oficial a CSV e imprime un resumen (casos, eventos, actividades, atributos, ingresos a UCI, altas y laboratorios con valor) |
 
-> **Aviso.** Este repositorio documenta un prototipo de investigación en construcción: los objetivos, el diseño y las referencias pueden cambiar, y ninguna cifra es un resultado final. El log analizado es público y está desidentificado por su fuente; el repositorio no contiene copia de los datos, no utiliza datos institucionales ni de terceros y prohíbe cualquier intento de reidentificación.
+**Fuente de los datos:** Mannhardt, F. (2016). *Sepsis Cases - Event Log*. 4TU.ResearchData. https://doi.org/10.4121/uuid:915d2bfb-7e84-49ad-a286-dc35f063a460. Licencia: *4TU General Terms of Use* (https://doi.org/10.4121/resource:terms_of_use), según los metadatos del DOI.
+
+**Pendiente:** el script de auditoría de la Fase 4 (leucocitos, PCR, lactato, edad y altas) y la matriz de características todavía no están en el repositorio.
+
+> **Aviso.** Este repositorio documenta un prototipo de investigación en construcción: los objetivos, el diseño y las referencias pueden cambiar, y ninguna cifra es un resultado final. El log analizado es público y está desidentificado por su fuente; el repositorio incluye una copia del log en [`datos/sepsis/`](datos/sepsis/) para facilitar su consulta, no utiliza datos institucionales ni de terceros y prohíbe cualquier intento de reidentificación.
 
 ---
 
@@ -61,7 +69,7 @@ El procedimiento propuesto integra tres componentes: (1) la **minería de proces
 
 ## 1. Estado del arte
 
-La revisión de la literatura se sistematizó en la matriz [`Estado_del_Arte_v3.xlsx`](Estado_del_Arte_v3.xlsx), que registra para cada referente el año, la fuente, el país, el tema, el objetivo específico con el que se relaciona, su aporte a la investigación y su estado de verificación. La matriz reúne **46 referentes**, de los cuales 28 se han verificado contra la fuente original y 18 permanecen pendientes de verificación.
+La revisión de la literatura se sistematizó en la matriz [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx), que registra para cada referente el año, la fuente, el país, el tema, el objetivo específico con el que se relaciona, su aporte a la investigación y su estado de verificación. La matriz reúne **46 referentes**, de los cuales 28 se han verificado contra la fuente original y 18 permanecen pendientes de verificación.
 
 | Tema (clasificación de la matriz) | Referentes |
 |---|---|
@@ -229,7 +237,7 @@ El marco teórico se organiza en torno a los conceptos que sustentan cada objeti
 
 ## 13. Temas del marco teórico
 
-La tabla relaciona cada tema con su aporte, los objetivos que sustenta y los referentes de la matriz del estado del arte (el símbolo # corresponde al número del referente en [`Estado_del_Arte_v3.xlsx`](Estado_del_Arte_v3.xlsx)).
+La tabla relaciona cada tema con su aporte, los objetivos que sustenta y los referentes de la matriz del estado del arte (el símbolo # corresponde al número del referente en [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx)).
 
 | Tema | Aporte a la investigación | Objetivo(s) | Referentes (#) |
 |---|---|---|---|
