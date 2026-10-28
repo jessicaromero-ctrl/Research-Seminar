@@ -69,7 +69,7 @@ El procedimiento propuesto integra tres componentes: (1) la **minería de proces
 
 ## 1. Estado del arte
 
-La revisión de la literatura se sistematizó en la matriz [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx), que registra para cada referente el año, la fuente, el país, el tema, el objetivo específico con el que se relaciona, su aporte a la investigación y su estado de verificación. La matriz reúne **46 referentes**, de los cuales 28 se han verificado contra la fuente original y 18 permanecen pendientes de verificación.
+La revisión de la literatura se sistematizó en la matriz [`Estado_del_Arte.xlsx`](Estado_del_Arte.xlsx), que registra para cada referente el año, la fuente, el país, el tema, el objetivo específico con el que se relaciona, su aporte a la investigación y su estado de verificación. La hoja *ESTADO DEL ARTE* tiene 60 filas numeradas, de las cuales 46 contienen un referente (#1 a #46; las filas #47 a #60 están vacías). La matriz reúne, por tanto, **46 referentes**: según la columna *Verificado (Sí/No)*, 28 se han verificado contra la fuente original y 18 permanecen pendientes de verificación.
 
 | Tema (clasificación de la matriz) | Referentes |
 |---|---|
@@ -78,7 +78,7 @@ La revisión de la literatura se sistematizó en la matriz [`Estado_del_Arte.xls
 | Validación de modelos | 6 |
 | Sepsis / contexto clínico | 4 |
 | Datos sintéticos | 2 |
-| Otro (calidad de datos y algoritmos) | 4 |
+| Otro (calidad y limpieza de datos, algoritmos de aprendizaje automático y transformación digital) | 4 |
 | **Total** | **46** |
 
 | Objetivo relacionado | Referentes |
