@@ -1,0 +1,16 @@
+INFO | Trazas en el XES: 1050
+INFO | Filas sin identificador de caso en el CSV: 24
+
+== Trazas del XES sin eventos ==
+Empty DataFrame
+Columns: [caso, eventos_xes]
+Index: []
+
+== Trazas del XES que no aparecen en el CSV ==
+caso  eventos_xes  eventos_csv    _merge
+  NA           24          NaN left_only
+
+== Casos con eventos distinto en XES y CSV ==
+Empty DataFrame
+Columns: [caso, eventos_xes, eventos_csv, _merge]
+Index: []

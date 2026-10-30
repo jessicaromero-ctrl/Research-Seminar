@@ -1,0 +1,3 @@
+INFO | Filas sin identificador de caso: 24
+INFO | Casos únicos tras la corrección: 1050
+INFO | Archivo guardado en datos/sepsis/procesado/sepsis_events_corregido.csv

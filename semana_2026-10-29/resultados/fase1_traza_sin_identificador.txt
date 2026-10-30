@@ -1,0 +1,43 @@
+INFO | Eventos sin identificador: 24
+INFO | Rango de filas en el CSV: 441 a 464
+INFO | Contiene Admission IC: False
+
+== Secuencia de la traza sin identificador ==
+         concept:name                 time:timestamp
+441   ER Registration  2014-11-10T01:45:19.000+01:00
+442         ER Triage  2014-11-10T01:50:10.000+01:00
+443  ER Sepsis Triage  2014-11-10T01:53:38.000+01:00
+444    IV Antibiotics  2014-11-10T01:54:36.000+01:00
+445         IV Liquid  2014-11-10T02:03:14.000+01:00
+446        Leucocytes  2014-11-10T02:23:00.000+01:00
+447               CRP  2014-11-10T02:23:00.000+01:00
+448        LacticAcid  2014-11-10T02:23:00.000+01:00
+449      Admission NC  2014-11-10T04:37:38.000+01:00
+450      Admission NC  2014-11-10T14:30:00.000+01:00
+451        Leucocytes  2014-11-11T07:00:00.000+01:00
+452               CRP  2014-11-11T07:00:00.000+01:00
+453               CRP  2014-11-13T07:00:00.000+01:00
+454        Leucocytes  2014-11-13T07:00:00.000+01:00
+455        Leucocytes  2014-11-15T16:08:00.000+01:00
+456        Leucocytes  2014-11-15T19:42:00.000+01:00
+457        Leucocytes  2014-11-15T23:46:00.000+01:00
+458        Leucocytes  2014-11-16T07:00:00.000+01:00
+459               CRP  2014-11-16T07:00:00.000+01:00
+460        LacticAcid  2014-11-16T13:05:00.000+01:00
+461        Leucocytes  2014-11-17T07:00:00.000+01:00
+462               CRP  2014-11-17T07:00:00.000+01:00
+463        Leucocytes  2014-11-18T07:00:00.000+01:00
+464         Release C  2014-11-22T14:30:00.000+01:00
+
+== Frecuencia de actividades ==
+concept:name
+Leucocytes          9
+CRP                 5
+LacticAcid          2
+Admission NC        2
+ER Registration     1
+ER Triage           1
+ER Sepsis Triage    1
+IV Antibiotics      1
+IV Liquid           1
+Release C           1
