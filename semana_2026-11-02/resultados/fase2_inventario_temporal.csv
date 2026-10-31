@@ -1,0 +1,28 @@
+atributo,valores,valores_en_t0_o_antes,valores_despues_de_IC,actividad_principal
+Age,1050,1050,0,ER Registration
+CRP,3123,21,730,CRP
+Diagnose,796,796,0,ER Registration
+DiagnosticArtAstrup,1050,995,0,ER Registration
+DiagnosticBlood,1050,995,0,ER Registration
+DiagnosticECG,1050,995,0,ER Registration
+DiagnosticIC,1050,995,0,ER Registration
+DiagnosticLacticAcid,1050,995,0,ER Registration
+DiagnosticLiquor,1050,995,0,ER Registration
+DiagnosticOther,1050,995,0,ER Registration
+DiagnosticSputum,1050,995,0,ER Registration
+DiagnosticUrinaryCulture,1050,995,0,ER Registration
+DiagnosticUrinarySediment,1050,995,0,ER Registration
+DiagnosticXthorax,1050,995,0,ER Registration
+DisfuncOrg,1050,995,0,ER Registration
+Hypotensie,1050,995,0,ER Registration
+Hypoxie,1050,995,0,ER Registration
+InfectionSuspected,1050,995,0,ER Registration
+Infusion,1050,995,0,ER Registration
+LacticAcid,1454,2,518,LacticAcid
+Leucocytes,3361,27,846,Leucocytes
+Oligurie,1050,995,0,ER Registration
+SIRSCritHeartRate,1050,995,0,ER Registration
+SIRSCritLeucos,1050,995,0,ER Registration
+SIRSCritTachypnea,1050,995,0,ER Registration
+SIRSCritTemperature,1050,995,0,ER Registration
+SIRSCriteria2OrMore,1050,995,0,ER Registration

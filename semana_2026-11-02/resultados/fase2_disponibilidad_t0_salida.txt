@@ -1,0 +1,54 @@
+INFO | Positivos: 110 | Negativos: 940
+INFO | Tabla guardada en semana_2026-11-02/resultados/fase2_disponibilidad_t0.csv
+                 atributo  disponible_t0_casos  pct_disp_positivos  pct_disp_negativos  diferencia_pp  valores_distintos
+                      Age                 1050              100.00              100.00           0.00                 15
+DiagnosticUrinarySediment                 1050              100.00              100.00           0.00                  2
+      SIRSCritTemperature                 1050              100.00              100.00           0.00                  2
+        SIRSCritTachypnea                 1050              100.00              100.00           0.00                  2
+           SIRSCritLeucos                 1050              100.00              100.00           0.00                  2
+        SIRSCritHeartRate                 1050              100.00              100.00           0.00                  2
+                 Oligurie                 1050              100.00              100.00           0.00                  2
+                 Infusion                 1050              100.00              100.00           0.00                  2
+       InfectionSuspected                 1050              100.00              100.00           0.00                  2
+                  Hypoxie                 1050              100.00              100.00           0.00                  2
+               Hypotensie                 1050              100.00              100.00           0.00                  2
+               DisfuncOrg                 1050              100.00              100.00           0.00                  2
+        DiagnosticXthorax                 1050              100.00              100.00           0.00                  2
+ DiagnosticUrinaryCulture                 1050              100.00              100.00           0.00                  2
+         DiagnosticSputum                 1050              100.00              100.00           0.00                  2
+          DiagnosticOther                 1050              100.00              100.00           0.00                  2
+         DiagnosticLiquor                 1050              100.00              100.00           0.00                  2
+     DiagnosticLacticAcid                 1050              100.00              100.00           0.00                  2
+             DiagnosticIC                 1050              100.00              100.00           0.00                  2
+            DiagnosticECG                 1050              100.00              100.00           0.00                  2
+          DiagnosticBlood                 1050              100.00              100.00           0.00                  2
+      DiagnosticArtAstrup                 1050              100.00              100.00           0.00                  2
+      SIRSCriteria2OrMore                 1050              100.00              100.00           0.00                  2
+                 Diagnose                  796               98.18               73.19          24.99                145
+               Leucocytes                   28                4.55                2.45           2.10                360
+                      CRP                   22                5.45                1.70           3.75                371
+               LacticAcid                    3                0.91                0.21           0.70                 79
+
+== Valores observados en atributos con 5 o menos categorías ==
+DiagnosticArtAstrup: {nan: 14164, False: 753, True: 297}
+DiagnosticBlood: {nan: 14164, True: 823, False: 227}
+DiagnosticECG: {nan: 14164, True: 765, False: 285}
+DiagnosticIC: {nan: 14164, True: 848, False: 202}
+DiagnosticLacticAcid: {nan: 14164, True: 804, False: 246}
+DiagnosticLiquor: {nan: 14164, False: 1045, True: 5}
+DiagnosticOther: {nan: 14164, False: 1040, True: 10}
+DiagnosticSputum: {nan: 14164, False: 1021, True: 29}
+DiagnosticUrinaryCulture: {nan: 14164, False: 574, True: 476}
+DiagnosticUrinarySediment: {nan: 14164, False: 531, True: 519}
+DiagnosticXthorax: {nan: 14164, True: 785, False: 265}
+DisfuncOrg: {nan: 14164, False: 981, True: 69}
+Hypotensie: {nan: 14164, False: 996, True: 54}
+Hypoxie: {nan: 14164, False: 1030, True: 20}
+InfectionSuspected: {nan: 14164, True: 848, False: 202}
+Infusion: {nan: 14164, True: 796, False: 254}
+Oligurie: {nan: 14164, False: 1025, True: 25}
+SIRSCritHeartRate: {nan: 14164, True: 811, False: 239}
+SIRSCritLeucos: {nan: 14164, False: 1001, True: 49}
+SIRSCritTachypnea: {nan: 14164, True: 601, False: 449}
+SIRSCritTemperature: {nan: 14164, True: 801, False: 249}
+SIRSCriteria2OrMore: {nan: 14164, True: 853, False: 197}
