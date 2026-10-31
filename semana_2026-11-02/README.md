@@ -1,13 +1,14 @@
-# Semana del 2 de noviembre de 2026: Fase 2, clasificación de atributos
+# Bitácora Metodológica del 31 de octubre de 2026: Fase 2, clasificación de atributos
 
 **Autora:** Jessica Melani Romero Lora
 **Proyecto:** Detección y exclusión de variables circulares en modelos de ingreso a UCI
+**Asesor:** Dr. Marcos Yamir Gómez
 **Fase:** 2 de 4 (auditoría temporal, OE1)
 **Estado:** en curso
 
 ## 1. Objetivo de la semana
 
-Clasificar cada atributo propio del log como elegible o no elegible para un modelo de predicción en t0. La clasificación separa dos preguntas: si el atributo está disponible en t0 (criterio temporal) y, si no lo está, por qué (tipo de circularidad). No se entrena ningún modelo en esta semana.
+Clasificar cada atributo propio del log como elegible o no elegible para un modelo de predicción en t0. La clasificación separa dos preguntas: si el atributo está disponible en t0 (criterio temporal) y, si no lo está, por qué (tipo de circularidad). No se entrena ningún modelo en esta semana. Objetivo: identificar la naturaleza y tipo de circularidad en las variables centrales del estudio, esto fundamente la comparación entre el modelo base (con circularidad) con respecto al modelo corregido.
 
 ## 2. Glosario de términos nuevos
 
