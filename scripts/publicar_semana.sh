@@ -1,3 +1,4 @@
+esc
 #!/bin/bash
 # Ejecuta los scripts de una semana, guarda sus salidas y publica en GitHub.
 # Uso: ./scripts/publicar_semana.sh <carpeta_semana> "<mensaje del commit>"
@@ -46,5 +47,6 @@ exit 0
 fi
 
 git commit -m "$MENSAJE"
+git pull --rebase origin main
 git push
 echo "Publicado: $(git log -1 --oneline)"
