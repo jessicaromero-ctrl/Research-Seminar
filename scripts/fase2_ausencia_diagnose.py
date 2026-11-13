@@ -38,9 +38,13 @@ def main() -> None:
 
     # Mecanismo C: actividad que comparte marca exacta con cada registro de Diagnose
     otros = df.loc[df["Diagnose"].isna(), [COL_CASO, COL_ACT, COL_TIEMPO]]
-    cruce = con_dx[[COL_CASO, COL_TIEMPO]].merge(otros, on=[COL_CASO, COL_TIEMPO], how="left")
-    print("\n== Actividad que comparte marca con Diagnose (mecanismo C) ==")
-    print(cruce[COL_ACT].fillna("(sin otra actividad con esa marca)").value_counts().head(12).to_string())
+    cruce = con_dx[[COL_CASO, COL_TIEMPO]].reset_index().merge(otros, on=[COL_CASO, COL_TIEMPO], how="left")
+    por_registro = cruce.groupby("index")[COL_ACT].apply(
+        lambda s: " + ".join(s.dropna()) or "(sin otra actividad con esa marca)"
+    )
+    print("\n== Actividad que comparte marca con Diagnose (mecanismo C, registros únicos) ==")
+    print(por_registro.value_counts().head(12).to_string())
+    print(f"Total de registros: {por_registro.size}")
 
     # Resumen por caso
     primera = df.groupby(COL_CASO)[COL_ACT].first()
