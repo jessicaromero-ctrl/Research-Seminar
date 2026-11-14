@@ -11,7 +11,7 @@
 **Autora:** Jessica Melani Romero Lora · *25322116@upmh.edu.mx*
 **Director de tesis:** Dr. Marcos Yamir Gómez
 
-**Versión:** 0.5 · **Estado:** en construcción · **Fecha:** octubre de 2026
+**Versión:** 0.6 · **Estado:** en construcción · **Fecha:** noviembre de 2026
 
 ![Estado](https://img.shields.io/badge/estado-en%20construcci%C3%B3n-orange) ![Datos](https://img.shields.io/badge/datos-p%C3%BAblicos%20desidentificados-blue)
 
@@ -40,11 +40,48 @@ El procedimiento propuesto integra tres componentes: (1) la **minería de proces
 | [`datos/sepsis/benchmark_simplificado/`](datos/sepsis/benchmark_simplificado/) | Versión simplificada del mismo log (solo caso, actividad y marca de tiempo; 1,050 casos y 15,214 eventos), sin atributos clínicos. Sirve solo como referencia para minería de procesos; **no es apta para la Fase 4.** |
 | [`scripts/`](scripts/) | [`convertir_xes_a_csv.py`](scripts/convertir_xes_a_csv.py): convierte el log oficial a CSV e imprime un resumen (casos, eventos, actividades, atributos, ingresos a UCI, altas y laboratorios con valor) |
 
+### Bitácoras por semana
+
+| Archivo | Contenido |
+|---|---|
+| [`semana_2026-10-29/README.md`](semana_2026-10-29/README.md) | Bitácora de la Fase 1: glosario, decisiones D1 a D8, resultados y limitaciones. |
+| [`semana_2026-11-02/README.md`](semana_2026-11-02/README.md) | Bitácora de la Fase 2: decisiones D9 a D14, correcciones, preguntas para la fuente y métricas de actualización. |
+| [`scripts/README.md`](scripts/README.md) | Descripción de cada script y su orden de ejecución. |
+
 **Fuente de los datos:** Mannhardt, F. (2016). *Sepsis Cases - Event Log*. 4TU.ResearchData. https://doi.org/10.4121/uuid:915d2bfb-7e84-49ad-a286-dc35f063a460. Licencia: *4TU General Terms of Use* (https://doi.org/10.4121/resource:terms_of_use), según los metadatos del DOI.
 
-**Pendiente:** el script de auditoría de la Fase 4 (leucocitos, PCR, lactato, edad y altas) y la matriz de características todavía no están en el repositorio.
+**Pendiente:** la auditoría de la Fase 4 y la matriz de características de la Fase 3. Los scripts y bitácoras de las Fases 1 y 2 ya están publicados (ver *Estado de avance*).
 
 > **Aviso.** Este repositorio documenta un prototipo de investigación en construcción: los objetivos, el diseño y las referencias pueden cambiar, y ninguna cifra es un resultado final. El log analizado es público y está desidentificado por su fuente; el repositorio incluye una copia del log en [`datos/sepsis/`](datos/sepsis/) para facilitar su consulta, no utiliza datos institucionales ni de terceros y prohíbe cualquier intento de reidentificación.
+
+---
+
+## Estado de avance
+
+Las cifras de esta sección son preliminares. Cada bitácora semanal registra su evidencia y sus correcciones.
+
+| Fase | Objetivo | Estado | Evidencia en el repositorio |
+|---|---|---|---|
+| 1 | Verificación del log y resolución del caso sin identificador | Completada | [`semana_2026-10-29/`](semana_2026-10-29/) |
+| 2 | Clasificación temporal de atributos (OE1) | En curso | [`semana_2026-11-02/`](semana_2026-11-02/) y `scripts/fase2_*.py` |
+| 3 | Pipelines de modelos y validación cruzada anidada (OE2) | No iniciada | — |
+| 4 | Auditoría con fugas inyectadas (OE3) | No iniciada | — |
+
+**Resultados validados de la Fase 1**
+
+- El log contiene 1,050 casos y 15,214 eventos, en concordancia con la documentación.
+- Una traza de 24 eventos no tenía identificador de caso. Tras verificar con `assert` que no contiene `Admission IC`, se le asignó `caso_sin_identificador` (decisiones D4 y D5). La traza es negativa.
+- Hay 110 casos positivos (10.5 %) y 940 negativos.
+
+**Resultados preliminares de la Fase 2**
+
+- t0 se define como el registro en urgencias (`ER Registration`). Cada uno de los 1,050 casos tiene exactamente un registro.
+- Ningún caso tiene `Admission IC` antes de t0.
+- Los booleanos, los criterios SIRS y `Age` están disponibles en t0 en todos los casos, sin diferencia entre clases.
+- `Diagnose` tiene una diferencia de 24.99 puntos porcentuales entre positivos y negativos. Esa diferencia supera el umbral fijado antes de revisar los datos.
+- Los laboratorios (`CRP`, `LacticAcid`, `Leucocytes`) tienen menos de 6 % de disponibilidad en t0.
+
+**Pendientes de la Fase 2:** cerrar D11c con evidencia documental, construir la tabla final de los 27 atributos, realizar el análisis de sensibilidad del umbral de cobertura y validar con el asesor la definición de los modelos base y corregido.
 
 ---
 
