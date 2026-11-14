@@ -16,7 +16,7 @@ Clasificar cada uno de los 27 atributos propios del log como elegible o no elegi
 | Término | Definición |
 |---|---|
 | **ER (Emergency Room)** | Servicio de urgencias. Es el punto de entrada del paciente al hospital. |
-| **Triage** | Clasificación rápida de la gravedad al llegar, para decidir la prioridad de atención. |
+| **Clasificación de gravedad** | Clasificación rápida de la gravedad al llegar, para decidir la prioridad de atención. |
 | **SIRS** | Criterios clínicos de respuesta inflamatoria sistémica (temperatura, frecuencia cardiaca, respiratoria y leucocitos). Se usan para identificar sepsis. |
 | **UCI (IC)** | Unidad de cuidados intensivos. El evento `Admission IC` registra el ingreso a esta unidad. Es el desenlace que predice la tesis. |
 | **NC** | Unidad de cuidado normal (sala general). `Admission NC` no es desenlace positivo. |
@@ -137,7 +137,7 @@ Clasificar cada uno de los 27 atributos propios del log como elegible o no elegi
 Estas preguntas no se responden con los datos. Deben buscarse en la documentación del log (4TU.ResearchData, DOI del README) y en Mannhardt y Blinde (2017). Cada respuesta debe registrarse con su cita y página.
 
 **Sobre `Diagnose`**
-1. ¿Cuándo se captura `Diagnose`: al llegar, durante el triaje o después de decidir el ingreso?
+1. ¿Cuándo se captura `Diagnose`: al llegar, durante la clasificación de gravedad o después de decidir el ingreso?
 2. ¿Por qué ningún caso tiene un registro de `Diagnose` posterior a t0?
 3. ¿Por qué 43 registros tienen marca anterior a `ER Registration`?
 4. ¿Es una impresión clínica inicial o un diagnóstico confirmado después?
@@ -154,7 +154,7 @@ Estas preguntas no se responden con los datos. Deben buscarse en la documentaci�
 
 **Sobre los atributos**
 11. ¿Qué significa `DiagnosticIC`? Se registra en t0 en 848 casos positivos y negativos por igual.
-12. ¿Los criterios SIRS y los indicadores de gravedad forman parte del triaje, según Mannhardt y Blinde (2017)?
+12. ¿Los criterios SIRS y los indicadores de gravedad forman parte de la clasificación de gravedad, según Mannhardt y Blinde (2017)?
 13. ¿Qué relación hay entre `LacticAcid` (valor) y `DiagnosticLacticAcid` (indicador de solicitud)?
 14. ¿Por qué el log documenta 39 atributos y el archivo contiene 27 propios?
 15. ¿Una celda vacía en un booleano significa "no registrado" o "falso"?

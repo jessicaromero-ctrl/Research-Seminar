@@ -25,7 +25,7 @@ Verificar que el log de eventos *Sepsis Cases* (Mannhardt, 2016) cumple la docum
 | **XES** | *eXtensible Event Stream*. Formato estándar en XML para logs de eventos, definido por la IEEE. |
 | **CSV** | *Comma-Separated Values*. Tabla de texto en la que cada fila es un registro y cada columna un atributo. Aquí es la versión aplanada del XES. |
 | **ER (*Emergency Room*)** | Servicio de urgencias del hospital. Es el punto de entrada del paciente al sistema. |
-| **Triage** | Clasificación rápida de la gravedad de un paciente al llegar a urgencias, para decidir la prioridad de atención. `ER Triage` y `ER Sepsis Triage` son dos evaluaciones de este tipo. |
+| **Clasificación de gravedad** | Clasificación rápida de la gravedad de un paciente al llegar a urgencias, para decidir la prioridad de atención. `ER Triage` y `ER Sepsis Triage` son dos evaluaciones de este tipo. |
 | **Sepsis** | Respuesta sistémica y desregulada del organismo a una infección, que puede causar disfunción de órganos y, si no se trata, la muerte. |
 | **SIRS** | *Systemic Inflammatory Response Syndrome*. Conjunto de criterios clínicos de respuesta inflamatoria (temperatura, frecuencia cardiaca, frecuencia respiratoria y leucocitos). Sirve para identificar sepsis en urgencias. |
 | **UCI (IC, *Intensive Care*)** | Unidad de cuidados intensivos. El evento `Admission IC` registra el ingreso del paciente a esta unidad. Es el desenlace que predice la tesis. |
