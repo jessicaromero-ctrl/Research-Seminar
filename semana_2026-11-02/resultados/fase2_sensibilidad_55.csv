@@ -1,0 +1,11 @@
+universo,atributo,n_casos,n_pos,n_neg,cobertura_total_pct,pct_pos,pct_neg,dif_pp
+todos,Age,1050,110,940,100.0,100.0,100.0,0.0
+todos,Diagnose,1050,110,940,75.81,98.18,73.19,24.99
+todos,CRP,1050,110,940,2.1,5.45,1.7,3.75
+todos,LacticAcid,1050,110,940,0.29,0.91,0.21,0.7
+todos,Leucocytes,1050,110,940,2.67,4.55,2.45,2.1
+sin_grupo_55,Age,995,98,897,100.0,100.0,100.0,0.0
+sin_grupo_55,Diagnose,995,98,897,75.68,97.96,73.24,24.72
+sin_grupo_55,CRP,995,98,897,0.0,0.0,0.0,0.0
+sin_grupo_55,LacticAcid,995,98,897,0.0,0.0,0.0,0.0
+sin_grupo_55,Leucocytes,995,98,897,0.0,0.0,0.0,0.0
