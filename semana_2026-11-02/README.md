@@ -132,6 +132,8 @@ Clasificar cada uno de los 27 atributos propios del log como elegible o no elegi
 *Resultado:* 14 categorías frecuentes, "otra" (271 casos) y "sin diagnóstico en t0" (254 casos).
 *Nota:* se fijó antes de revisar el resultado de cardinalidad.
 
+**D9b (cerrada: no altera la clasificación).** t0 se mantiene como la marca de `ER Registration`. En 55 casos (5.2 %), esa marca es posterior a atención temprana (laboratorios, tratamiento y clasificación de gravedad). Sin esos casos, la cobertura de los laboratorios en t0 es 0 %; con todos, es menor a 3 %. La clasificación de los laboratorios no depende de la definición de t0. En el grupo de 55, la proporción de positivos es 21.8 %, frente a 9.8 % en el resto; se reporta como observación y no se usa como criterio de selección.
+
 ## 7. Preguntas para la fuente
 
 Estas preguntas no se responden con los datos. Deben buscarse en la documentación del log (4TU.ResearchData, DOI del README) y en Mannhardt y Blinde (2017). Cada respuesta debe registrarse con su cita y página.
@@ -228,3 +230,75 @@ Estas preguntas no se responden con los datos. Deben buscarse en la documentaci�
 - Definir D13 solo si la exclusión de laboratorios lo requiere.
 - Validar D14 con el asesor antes de la Fase 3.
 - Responder las preguntas de la sección 7, empezando por las relacionadas con `Diagnose` y `Admission IC`.
+
+## 11. Visualizaciones
+
+### 11.1 Orden de aplicación de los criterios
+
+```mermaid
+flowchart TD
+    A["Atributo propio del log"] --> B{"D11a: ¿tiene valor con marca ≤ t0?"}
+    B -- No --> X1["No elegible: sin valor en t0"]
+    B -- Sí --> C{"D11b: ¿tiene valores posteriores a Admission IC?"}
+    C -- Sí --> X2["Circular temporal: excluir"]
+    C -- No --> D{"D11d: ¿cobertura en t0 ≥ 50 %?"}
+    D -- No --> X3["No elegible como predictor principal"]
+    D -- Sí --> E{"D11c: ¿la documentación indica captura tras la decisión de ingreso?"}
+    E -- Sí --> X4["Excluir por captura retrospectiva (pendiente de fuente)"]
+    E -- No --> F["Elegible"]
+    style X1 fill:#f8d7da
+    style X2 fill:#f8d7da
+    style X3 fill:#f8d7da
+    style X4 fill:#fff3cd
+    style F fill:#d4edda
+```
+
+### 11.2 Ventana de predicción en una traza
+
+```mermaid
+flowchart LR
+    P["Primer evento de la traza"] --> T0["t0: ER Registration"]
+    T0 --> V["Ventana predictiva: valores con marca ≤ t0 son elegibles"]
+    V --> IC["t_ic: Admission IC (solo positivos)"]
+    IC --> POST["Valores posteriores a t_ic: circularidad temporal"]
+```
+
+### 11.3 Mapa de clasificación de los 27 atributos
+
+```mermaid
+flowchart LR
+    subgraph Excluidos
+        CRP["CRP<br/>cobertura t0: 2.1 %<br/>730 valores tras IC"]
+        LA["LacticAcid<br/>cobertura t0: 0.3 %<br/>518 valores tras IC"]
+        LE["Leucocytes<br/>cobertura t0: 2.7 %<br/>846 valores tras IC"]
+    end
+    subgraph Condicionados
+        DX["Diagnose<br/>cobertura t0: 75.8 %<br/>pendiente D11c"]
+    end
+    subgraph Elegibles
+        AGE["Age<br/>cobertura t0: 100 %"]
+        BOOL["11 booleanos diagnósticos + 6 clínicos + 5 SIRS<br/>cobertura t0: 100 %<br/>pendiente revisión proxy"]
+    end
+    style CRP fill:#f8d7da
+    style LA fill:#f8d7da
+    style LE fill:#f8d7da
+    style DX fill:#fff3cd
+    style AGE fill:#d4edda
+    style BOOL fill:#d4edda
+```
+
+### 11.4 Composición de la muestra
+
+```mermaid
+pie title Casos del log (n = 1,050)
+    "Negativos (940)" : 940
+    "Positivos (110)" : 110
+```
+
+```mermaid
+pie title Grupo de atención temprana previa a t0 (n = 55)
+    "Negativos (43)" : 43
+    "Positivos (12)" : 12
+```
+
+Las proporciones son 9.8 % de positivos fuera del grupo y 21.8 % dentro de él.
